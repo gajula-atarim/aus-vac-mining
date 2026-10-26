@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:Poppins,sans-serif}svg{display:block;width:100%;height:100%}.b{cursor:pointer}.b circle,.b text,.ln,.dot{transition:all .35s ease}@keyframes pu{0%{r:6;opacity:.8}100%{r:26;opacity:0}}.pulse{animation:pu 1.6s ease-out infinite}</style>
+</head><body>
+<svg id="m"></svg>
+<script>
+const W=640,H=520,svg=d3.select('#m').attr('viewBox',`0 0 ${W} ${H}`);
+const P=[
+ {n:1,s:'Mt Pleasant',lon:121.3,lat:-30.6,g:1},
+ {n:2,s:'Otter-Juan',lon:121.62,lat:-31.18,g:0},
+ {n:3,s:'Bendigo',lon:144.28,lat:-36.76,g:1},
+ {n:4,s:'Cosmos',lon:121.0,lat:-27.55,g:0},
+ {n:5,s:'Agnew',lon:120.7,lat:-28.0,g:1},
+ {n:6,s:'Long-Victor',lon:121.78,lat:-31.32,g:0},
+ {n:7,s:'Redross',lon:121.57,lat:-31.55,g:0},
+ {n:8,s:'Harlequin',lon:121.78,lat:-32.2,g:1}];
+const GOLD='#FEC306',NI='#C9D2CC';
+let sel=0;
+d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(t=>{
+  const au=topojson.feature(t,t.objects.countries).features.find(d=>d.id==='036');
+  const proj=d3.geoMercator().fitExtent([[150,24],[W-16,H-40]],au),path=d3.geoPath(proj);
+  const grat=d3.geoGraticule().step([5,5]).extent([[110,-45],[156,-9]]);
+  svg.append('path').attr('d',path(grat())).attr('fill','none').attr('stroke','rgba(255,255,255,.07)');
+  svg.append('path').attr('d',path(au)).attr('fill','rgba(255,255,255,.07)').attr('stroke','rgba(255,255,255,.35)').attr('stroke-width',1.2);
+  const kal=proj([121.47,-30.75]);
+  svg.append('text').text('KALGOORLIE GOLDFIELDS').attr('x',kal[0]+18).attr('y',kal[1]+4).attr('font-size',9).attr('font-weight',600).attr('letter-spacing','.18em').attr('fill','rgba(255,255,255,.45)');
+  const wa=P.filter(p=>p.n!==3).sort((a,b)=>b.lat-a.lat);
+  wa.forEach((p,i)=>{p.bx=118;p.by=150+i*44;});
+  const bd=P.find(p=>p.n===3),bp=proj([bd.lon,bd.lat]);bd.bx=bp[0]-10;bd.by=bp[1]+46;
+  const lg=svg.append('g'),dg=svg.append('g'),bg=svg.append('g');
+  P.forEach(p=>{
+    const [x,y]=proj([p.lon,p.lat]);p.x=x;p.y=y;
+    const c=p.g?GOLD:NI;
+    p.line=lg.append('path').attr('class','ln').attr('fill','none').attr('stroke',c).attr('stroke-width',1).attr('stroke-opacity',.35)
+      .attr('d',p.n===3?`M${p.bx},${p.by-14}L${x},${y}`:`M${p.bx+14},${p.by}H${150+((p.n*7)%20)}L${x},${y}`);
+    p.pulse=dg.append('circle').attr('cx',x).attr('cy',y).attr('r',6).attr('fill','none').attr('stroke',c).attr('stroke-width',1.5).attr('opacity',0);
+    p.dot=dg.append('circle').attr('class','dot').attr('cx',x).attr('cy',y).attr('r',3.5).attr('fill',c).attr('stroke','#1E2622').attr('stroke-width',1);
+    const g=bg.append('g').attr('class','b').attr('transform',`translate(${p.bx},${p.by})`).on('click',()=>parent.postMessage({type:'ausvac-pick',n:p.n-1},'*'));
+    p.ring=g.append('circle').attr('r',14).attr('fill','#1E2622').attr('stroke',c).attr('stroke-width',1.5);
+    p.num=g.append('text').text('0'+p.n).attr('text-anchor','middle').attr('dy',4).attr('font-size',10).attr('font-weight',700).attr('fill',c);
+    p.lab=g.append('text').text(p.s).attr('x',p.n===3?20:-22).attr('text-anchor',p.n===3?'start':'end').attr('dy',4).attr('font-size',11).attr('font-weight',500).attr('fill','rgba(255,255,255,.7)');
+  });
+  const leg=svg.append('g').attr('transform',`translate(20,${H-22})`);
+  [['GOLD',GOLD],['NICKEL',NI]].forEach(([t,c],i)=>{const g=leg.append('g').attr('transform',`translate(${i*80},0)`);g.append('circle').attr('r',4).attr('fill',c);g.append('text').text(t).attr('x',10).attr('dy',3.5).attr('font-size',9).attr('font-weight',600).attr('letter-spacing','.16em').attr('fill','rgba(255,255,255,.6)');});
+  draw();
+});
+function draw(){P.forEach((p,i)=>{if(!p.ring)return;const on=i===sel,c=p.g?GOLD:NI;
+  p.ring.attr('fill',on?c:'#1E2622').attr('r',on?16:14);p.num.attr('fill',on?'#1E2622':c);
+  p.lab.attr('fill',on?'#FFFFFF':'rgba(255,255,255,.6)').attr('font-weight',on?700:500);
+  p.line.attr('stroke-opacity',on?1:.3).attr('stroke-width',on?1.6:1);p.dot.attr('r',on?6:3.5);
+  p.pulse.attr('class',on?'pulse':null).attr('opacity',on?1:0);});}
+addEventListener('message',e=>{if(e.data&&e.data.type==='ausvac-sel'){sel=e.data.n;draw();}});
+</script>
+</body></html>
