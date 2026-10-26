@@ -1,0 +1,524 @@
+/* ==========================================================================
+   Ausvac site fixes – merged from the separate fix stylesheets, in their
+   original load order (later sections still override earlier ones).
+   Loads after the designer's ausvac-*.css files.
+   ========================================================================== */
+
+/* ---- Header navigation (all breakpoints) (was ausvac-zzzzzzzzzzzzz-nav.css) ---- */
+/* --------------------------------------------------------------------------
+   Header navigation: one-row header on every breakpoint, branded hamburger
+   and dropdown. `body` prefixes outrank the Elementor/UAE container rules.
+   -------------------------------------------------------------------------- */
+
+/* --- shared row: badge left, phone + menu right, centred on the badge --- */
+body #av-header > .e-con-inner{
+  display: flex; flex-direction: row; flex-wrap: nowrap;
+  justify-content: space-between; align-items: center;
+}
+body #av-badge{ flex: 0 1 auto; min-width: 0; }
+body #av-header-right{
+  flex: 0 0 auto; width: auto; max-width: none; margin-left: auto;
+  padding-top: 0; gap: 12px;
+}
+body #av-header-right > .elementor-element{ flex: 0 0 auto; width: auto; max-width: none; }
+.av-phone{ white-space: nowrap; }
+#av-nav .hfe-nav-menu__layout-horizontal .hfe-nav-menu{ flex-wrap: nowrap; }
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item a.hfe-menu-item{ white-space: nowrap; }
+
+/* --- hamburger toggle (shown at 1024px and below) --- */
+body #av-nav .hfe-nav-menu__toggle{ margin: 0; cursor: pointer; justify-content: flex-end; }
+body #av-nav .hfe-nav-menu-icon{
+  display: grid; place-items: center;
+  width: 44px; height: 44px; padding: 0;
+  border: 1.5px solid rgba(255,255,255,.85); border-radius: 50%;
+  background: rgba(20,26,23,.35);
+  color: #FFFFFF; fill: #FFFFFF; font-size: 18px; line-height: 1;
+  filter: drop-shadow(0 1px 8px rgba(0,0,0,.45));
+  transition: color .2s, border-color .2s, background-color .2s;
+}
+body #av-nav .hfe-nav-menu-icon i,
+body #av-nav .hfe-nav-menu-icon i:before{ color: #FFFFFF; }
+body #av-nav .hfe-nav-menu-icon svg{ width: 18px; height: 18px; fill: #FFFFFF; }
+body #av-nav .hfe-nav-menu__toggle:hover .hfe-nav-menu-icon,
+body #av-nav .hfe-nav-menu__toggle:focus-visible .hfe-nav-menu-icon,
+body #av-nav .hfe-active-menu .hfe-nav-menu-icon{
+  color: var(--av-gold); fill: var(--av-gold); border-color: var(--av-gold);
+  background: rgba(20,26,23,.6);
+}
+body #av-nav .hfe-nav-menu__toggle:hover .hfe-nav-menu-icon i:before,
+body #av-nav .hfe-nav-menu__toggle:focus-visible .hfe-nav-menu-icon i:before,
+body #av-nav .hfe-active-menu .hfe-nav-menu-icon i:before{ color: var(--av-gold); }
+body #av-nav .hfe-nav-menu__toggle:hover .hfe-nav-menu-icon svg,
+body #av-nav .hfe-nav-menu__toggle:focus-visible .hfe-nav-menu-icon svg,
+body #av-nav .hfe-active-menu .hfe-nav-menu-icon svg{ fill: var(--av-gold); }
+
+/* --- dropdown panel (base rules give items white text and no padding) --- */
+/* out of flow, so the hidden full-width panel no longer widens the widget */
+body #av-nav{ position: relative; }
+body #av-nav nav.hfe-dropdown{
+  position: absolute; top: 100%; right: 0; margin-top: 14px;
+  background: var(--av-ink);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  border-top: 3px solid var(--av-gold);
+  z-index: 60;
+}
+body #av-nav nav.hfe-dropdown ul.hfe-nav-menu{ display: block; }
+body #av-nav nav.hfe-dropdown li.menu-item{ margin: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+body #av-nav nav.hfe-dropdown li.menu-item:last-child{ border-bottom: 0; }
+body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item{
+  display: block; padding: 16px 24px;
+  background: var(--av-ink); color: #FFFFFF;
+  font-size: 12px; letter-spacing: .2em; text-shadow: none; text-align: left;
+}
+body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover,
+body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:focus-visible,
+body #av-nav nav.hfe-dropdown .menu-item:first-child a.hfe-menu-item{
+  color: var(--av-gold); background: var(--av-panel);
+}
+
+/* --- tablet + mobile: phone and hamburger side by side --- */
+@media (max-width: 1024px){
+  body #av-header > .e-con-inner{ padding: 0 20px 0 clamp(20px, 6vw, 60px); gap: 16px; }
+  body #av-header-right{
+    display: flex; flex-direction: row; flex-wrap: nowrap;
+    align-items: center; justify-content: flex-end; gap: 14px;
+  }
+  body #av-hero > .e-con-inner{ padding-top: 110px; }
+}
+
+@media (max-width: 767px){
+  body #av-header > .e-con-inner{ padding: 0 16px 0 20px; gap: 12px; }
+  body #av-badge{ padding: 10px 14px 10px 10px; gap: 10px; }
+  body #av-badge .av-badge-logo img{ width: 42px; }
+  body .elementor-widget-heading.av-badge-name .elementor-heading-title{ font-size: 12px; }
+  /* phone collapses to its round icon so it fits beside the hamburger */
+  body .av-phone{ font-size: 0; gap: 0; }
+  body .av-phone-i{ width: 44px; height: 44px; font-size: 16px; background: rgba(20,26,23,.35); }
+  body #av-header-right{ gap: 10px; }
+  body #av-hero > .e-con-inner{ padding-top: 110px; }
+}
+
+@media (max-width: 380px){
+  body .elementor-widget-heading.av-badge-name .elementor-heading-title{ font-size: 11px; }
+  body #av-badge .av-badge-logo img{ width: 36px; }
+}
+
+/* ---- Mobile menu dropdown + hero social icons (was ausvac-zzzzzzzzzzzzzz-mobile.css) ---- */
+/* --------------------------------------------------------------------------
+   Dropdown width: UAE's script sizes the panel from the window and offsets
+   it left, which pushed it past the right edge (sideways scroll + white
+   strip). Anchor it to the full-width header instead.
+   -------------------------------------------------------------------------- */
+html, body{ overflow-x: clip; }
+@media (max-width: 1024px){
+  body #av-header > .e-con-inner,
+  body #av-header-right,
+  body #av-nav,
+  body #av-nav div:not(nav.hfe-dropdown div){ position: static; }
+  body #av-nav nav.hfe-dropdown{
+    position: absolute; top: 100%; margin-top: 0;
+    left: 0 !important; right: 0 !important; width: auto !important; max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile: social icons drop out of the side rail and sit under READ MORE.
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+  body #av-hero-copy{ padding-bottom: 28px; }
+  body #av-social{
+    position: static; transform: none; left: auto; top: auto;
+    display: flex; flex-direction: row; align-items: center; justify-content: flex-start;
+    justify-self: start; gap: 16px; width: auto; padding: 0 0 104px; margin: 0;
+  }
+  body #av-social > .elementor-element{ width: auto; }
+  body #av-social .av-follow{
+    writing-mode: horizontal-tb; transform: none; rotate: none;
+    font-size: 10px; letter-spacing: .24em; white-space: nowrap;
+  }
+  body #av-social .elementor-social-icons-wrapper{
+    display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px;
+  }
+  body #av-social .elementor-grid-item{ margin: 0; }
+}
+
+/* ---- Logo badge on one line (was ausvac-zzzzzzzzzzzzzzz-logo.css) ---- */
+/* --------------------------------------------------------------------------
+   Logo badge stays on one line. Elementor containers wrap their children, so
+   on phones under ~380px the company name dropped below the AV mark.
+   -------------------------------------------------------------------------- */
+body #av-badge{ flex-wrap: nowrap; flex-shrink: 0; }
+body #av-badge > .elementor-element{ flex: 0 0 auto; }
+body .elementor-widget-heading.av-badge-name .elementor-heading-title{ white-space: nowrap; }
+
+@media (max-width: 380px){
+  body #av-header > .e-con-inner{ padding: 0 12px 0 16px; gap: 10px; }
+  body #av-badge{ padding: 8px 12px 8px 8px; gap: 8px; }
+  body #av-badge .av-badge-logo img{ width: 34px; }
+  body .elementor-widget-heading.av-badge-name .elementor-heading-title{ font-size: 11px; letter-spacing: -.01em; }
+  body #av-header-right{ gap: 8px; }
+  body #av-nav .hfe-nav-menu-icon,
+  body .av-phone-i{ width: 40px; height: 40px; }
+}
+
+/* very small phones: drop the header phone icon (the number is in the footer) */
+@media (max-width: 340px){
+  body .elementor-widget-heading.av-badge-name .elementor-heading-title{ font-size: 10px; }
+  body #av-badge .av-badge-logo img{ width: 30px; }
+  body #av-header-right > .elementor-element:first-child{ display: none; }
+}
+
+/* ---- Tablet: About mosaic (was ausvac-zzzzzzzzzzzzzzzz-about.css) ---- */
+/* --------------------------------------------------------------------------
+   Tablet: About photo mosaic sits beside the copy, not pinned to the bottom.
+   Desktop pins it to the row's end and pulls it into the next section with a
+   negative margin; on tablet the taller copy column left it far below the
+   heading. The services section loses the top padding that made room for it.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px){
+  body #av-about-grid{ align-items: center; gap: 40px; }
+  body #av-mosaic{ align-self: center; margin-bottom: 0; }
+  body #av-services > .e-con-inner{ padding-top: 110px; }
+}
+
+/* ---- Footer menu (no hamburger) (was ausvac-zzzzzzzzzzzzzzzzz-footer.css) ---- */
+/* --------------------------------------------------------------------------
+   Footer menu: no hamburger. The UAE nav widget collapses to a toggle at
+   tablet width by default; in the footer the links always show as a centred
+   row. Below the breakpoint UAE only renders the links in its dropdown panel,
+   so that panel is kept open and laid out like the desktop row.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px){
+  body #av-footer-nav .hfe-nav-menu__toggle{ display: none !important; }
+  body #av-footer-nav nav.hfe-dropdown,
+  body #av-footer-nav nav.hfe-dropdown *{
+    visibility: visible !important; opacity: 1 !important;
+    max-height: none !important; transform: none !important;
+  }
+  body #av-footer-nav nav.hfe-dropdown{
+    display: block !important; position: static !important;
+    width: auto !important; left: auto !important; height: auto !important;
+    background: transparent !important; box-shadow: none !important; border: 0 !important;
+  }
+  body #av-footer-nav nav.hfe-dropdown ul{
+    display: flex !important; flex-direction: row !important; flex-wrap: wrap !important;
+    justify-content: center !important; gap: 14px 0;
+    width: 100%; height: auto !important; margin: 0; padding: 0;
+    background: transparent !important;
+  }
+  body #av-footer-nav nav.hfe-dropdown li{
+    display: block !important; flex: 0 0 auto; width: auto !important;
+    margin: 0 12px; border: 0 !important; background: transparent !important;
+  }
+  body #av-footer-nav nav.hfe-dropdown li a{
+    padding: 0 !important; border: 0 !important; background: transparent !important;
+    color: #FFFFFF !important; font-size: 10px; font-weight: 500;
+    letter-spacing: .24em; text-align: center;
+  }
+  body #av-footer-nav nav.hfe-dropdown li a:hover{ color: var(--av-gold) !important; }
+}
+
+/* ---- Mobile header + footer polish (was ausvac-zzzzzzzzzzzzzzzzzz-mobile-polish.css) ---- */
+/* --------------------------------------------------------------------------
+   Mobile polish (767px and below).
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+
+  /* header: breathing room above the badge, icons centred on the badge.
+     The icon circles render ~5px above their own box, so the group carries a
+     10px top margin (5px once centred). A transform or relative position
+     would re-anchor the menu dropdown, so margin it is. */
+  html body #av-header > .e-con-inner{ padding: 14px 16px 0 16px; align-items: center !important; }
+  html body #av-badge{ margin: 0 !important; align-self: center !important; }
+  html body #av-header-right{ margin: 10px 0 0 auto !important; align-self: center !important; }
+  html body #av-hero > .e-con-inner{ padding-top: 124px; }
+
+  /* footer: address on two balanced lines, phone and email each on their own */
+  html body .av-footer-contact{
+    flex-direction: column; align-items: center; gap: 8px;
+    font-size: 12px; line-height: 1.6;
+  }
+  html body .av-footer-contact > span{ max-width: 280px; text-wrap: balance; }
+
+  /* footer badge stays on one line */
+  html body #av-footer-badge{ flex-wrap: nowrap; padding: 10px 16px 10px 12px; gap: 10px; }
+  html body #av-footer-badge > .elementor-element{ flex: 0 0 auto; }
+  html body #av-footer-badge .av-fbadge-logo img{ width: 44px; }
+  html body .elementor-widget-heading.av-fbadge-name .elementor-heading-title{ font-size: 16px; white-space: nowrap; }
+
+  /* footer menu and copyright on one line each */
+  html body #av-footer-nav nav.hfe-dropdown ul{ flex-wrap: nowrap !important; gap: 0 !important; }
+  html body #av-footer-nav nav.hfe-dropdown li{ margin: 0 7px !important; }
+  html body #av-footer-nav nav.hfe-dropdown li a{ font-size: 9px !important; letter-spacing: .1em !important; white-space: nowrap; }
+  html body .elementor-widget-heading.av-footer-copy .elementor-heading-title{ font-size: 10px; letter-spacing: .04em; white-space: nowrap; }
+}
+
+@media (max-width: 374px){
+  html body #av-footer-nav nav.hfe-dropdown li{ margin: 0 5px !important; }
+  html body #av-footer-nav nav.hfe-dropdown li a{ font-size: 8.5px !important; letter-spacing: .06em !important; }
+  html body .elementor-widget-heading.av-footer-copy .elementor-heading-title{ font-size: 9px; letter-spacing: .02em; }
+}
+
+/* ---- Tablet footer contact (was ausvac-zzzzzzzzzzzzzzzzzzz-footer-tablet.css) ---- */
+/* --------------------------------------------------------------------------
+   Tablet footer contact block: address centred on its own line, phone and
+   email side by side beneath it with a thin divider. The default wrap left
+   the email stranded on a second line.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px){
+  html body .av-footer-contact{
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 10px 0; font-size: 13px; line-height: 1.6;
+  }
+  html body .av-footer-contact > span{ flex: 0 0 100%; text-align: center; }
+  html body .av-footer-contact > a{ padding: 0 20px; }
+  html body .av-footer-contact > a + a{ border-left: 1px solid rgba(255,255,255,.25); }
+}
+
+/* ---- Tablet header + services cards (was ausvac-zzzzzzzzzzzzzzzzzzzz-tablet.css) ---- */
+/* --------------------------------------------------------------------------
+   Tablet polish (768-1024px).
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px){
+
+  /* header: breathing room above the badge, icons centred on the badge.
+     The icon circles render ~5px above their box; the 10px top margin
+     (5px once centred) corrects it without re-anchoring the dropdown. */
+  html body #av-header > .e-con-inner{ padding-top: 18px; align-items: center !important; }
+  html body #av-badge{ margin: 0 !important; align-self: center !important; }
+  html body #av-header-right{ margin: 10px 0 0 auto !important; align-self: center !important; }
+  html body #av-hero > .e-con-inner{ padding-top: 128px; }
+
+  /* services: three equal cards in one row instead of 2 + an orphan,
+     without the desktop stagger on the middle card */
+  html body #av-services-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  html body #av-service-2{ margin-top: 0; }
+  html body #av-service-1-body,
+  html body #av-service-2-body,
+  html body #av-service-3-body{ padding: 20px 16px 18px; }
+  html body #av-services-grid .elementor-widget-heading .elementor-heading-title{ font-size: 15px; }
+  html body #av-services-grid .elementor-widget-text-editor{ font-size: 12.5px; line-height: 1.7; }
+}
+
+/* ---- "Read the full story" popup (was ausvac-zzzzzzzzzzzzzzzzzzzzz-story-modal.css) ---- */
+/* --------------------------------------------------------------------------
+   "Read the full story" popup (built by ausvac-story-modal.js). The inline
+   story paragraph never expands now; the button keeps its look.
+   -------------------------------------------------------------------------- */
+.av-story-body{ display: none !important; }
+
+html.av-modal-open,
+html.av-modal-open body{ overflow: hidden; }
+
+.av-story-modal{
+  position: fixed; inset: 0; z-index: 9999;
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0; background: transparent;
+  color: var(--av-ink);
+}
+.av-story-modal[open]{ display: grid; place-items: center; }
+.av-story-modal::backdrop{
+  background: rgba(20,26,23,.78);
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+}
+/* fallback when <dialog> has no top layer: paint the backdrop ourselves */
+.av-story-modal[open]:not(:modal){ background: rgba(20,26,23,.78); }
+
+.av-story-modal__box{
+  position: relative; box-sizing: border-box;
+  display: grid; grid-template-rows: auto auto minmax(0, 1fr);
+  width: min(680px, calc(100% - 32px));
+  max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px);
+  padding: clamp(28px, 5vw, 48px) clamp(22px, 5vw, 48px) clamp(24px, 4vw, 40px);
+  background: #FFFFFF; border-top: 4px solid var(--av-gold);
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  font-family: 'Poppins', sans-serif;
+  animation: av-story-in .28s ease-out;
+}
+@keyframes av-story-in{
+  from{ opacity: 0; transform: translateY(16px) scale(.98); }
+  to{ opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .av-story-modal__box{ animation: none; }
+}
+
+.av-story-modal__close{
+  position: absolute; top: 10px; right: 10px;
+  width: 44px; height: 44px; padding: 0; margin: 0;
+  display: grid; place-items: center;
+  border: 0; border-radius: 50%; background: transparent; cursor: pointer;
+  color: var(--av-ink); font: 300 30px/1 'Poppins', sans-serif;
+  transition: background-color .2s, color .2s;
+}
+.av-story-modal__close:hover,
+.av-story-modal__close:focus-visible{ background: var(--av-light); color: var(--av-green); outline: none; }
+
+.av-story-modal__eyebrow{
+  font-size: 11px; font-weight: 600; letter-spacing: .24em;
+  color: var(--av-green); margin: 0 48px 10px 0;
+}
+.av-story-modal__title{
+  margin: 0 48px 18px 0; padding: 0;
+  font-family: 'Poppins', sans-serif; font-weight: 700;
+  font-size: clamp(22px, 3.2vw, 30px); line-height: 1.2; letter-spacing: -.01em;
+  color: var(--av-ink);
+}
+.av-story-modal__text{
+  overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  padding-right: 6px; margin-right: -6px;
+}
+.av-story-modal__text p{
+  margin: 0; font-size: 15px; line-height: 1.85; color: var(--av-body);
+}
+
+@media (max-width: 767px){
+  .av-story-modal__box{
+    width: calc(100% - 24px);
+    max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px);
+    padding: 26px 20px 22px;
+  }
+  .av-story-modal__close{ top: 6px; right: 6px; }
+  .av-story-modal__title{ font-size: 21px; margin-right: 40px; }
+  .av-story-modal__text p{ font-size: 14px; line-height: 1.8; }
+}
+
+/* ---- Eyebrow line-height + header phone icon (was ausvac-zzzzzzzzzzzzzzzzzzzzzz-icons.css) ---- */
+/* --------------------------------------------------------------------------
+   Eyebrow labels: the base rule sets line-height 1, so a label that wraps
+   (the hero one on phones) had its two lines touching.
+   -------------------------------------------------------------------------- */
+html body .elementor-widget-heading.av-eyebrow .elementor-heading-title{ line-height: 1.7; }
+
+/* --------------------------------------------------------------------------
+   Header phone icon: the "\260E" emoji renders as a red glyph on most
+   phones. Hide it and draw a white line icon that follows the text colour.
+   -------------------------------------------------------------------------- */
+html body .av-phone-i{
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  font-size: 0 !important; line-height: 0 !important; padding: 0 !important;
+  color: #FFFFFF; box-sizing: border-box;
+}
+html body .av-phone-i::before{
+  content: ""; display: block; flex: 0 0 auto;
+  width: 14px; height: 14px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+html body .av-phone:hover .av-phone-i,
+html body .av-phone:focus-visible .av-phone-i{ color: var(--av-gold); border-color: var(--av-gold); }
+
+@media (max-width: 767px){
+  html body .av-phone-i::before{ width: 17px; height: 17px; }
+}
+
+/* ---- Inner pages (Company, Services, Publications, Contact) (was ausvac-zzzzzzzzzzzzzzzzzzzzzzz-pages.css) ---- */
+/* --------------------------------------------------------------------------
+   Inner pages (Company, Services, Publications, Contact) built from the
+   design package. Markup lives in Elementor HTML widgets inside
+   .av-page; most styling is inline in that markup, as in the design.
+   This file: Elementor/theme resets, the overlay-header offset, the hover
+   and focus states the design generated at runtime, and the active menu item.
+   -------------------------------------------------------------------------- */
+
+/* Elementor wrapper: no padding, gaps or widget spacing around the sections */
+.av-page.e-con,
+.av-page .e-con{ --padding-top:0; --padding-right:0; --padding-bottom:0; --padding-left:0; --gap:0; --row-gap:0; --column-gap:0; --widgets-spacing:0; padding:0; gap:0; }
+.av-page .elementor-widget{ margin:0 !important; width:100%; }
+.av-page .elementor-widget-html > .elementor-widget-container{ padding:0; margin:0; }
+
+/* theme (Hello Elementor) defaults that would leak into the design markup */
+.av-page button{ padding:0; border-radius:0; line-height:normal; text-transform:none; white-space:normal; }
+.av-page input, .av-page textarea{ border-radius:0; }
+.av-page input:focus, .av-page textarea:focus{ outline:none; }
+.av-page img{ height:auto; }
+.av-page img[style*="height: 100%"]{ height:100%; }
+.av-page h1, .av-page h2, .av-page h3, .av-page h4, .av-page p{ font-family:'Poppins', sans-serif; }
+.av-page :focus-visible{ outline:2px solid #FEC306; outline-offset:2px; }
+
+/* hero: the site header overlays it, so the copy starts below the header */
+.av-page [data-av="heroinner"]{ padding-top:clamp(120px, 11vw, 150px) !important; }
+@media (max-width: 767px){
+  .av-page [data-av="heroinner"]{ padding-top:118px !important; }
+}
+
+/* active menu item (the theme hard-coded the first item, HOME, as gold) */
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item:first-child a.hfe-menu-item{ color:#FFFFFF; }
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item.current-menu-item a.hfe-menu-item{ color:var(--av-gold); }
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item a.hfe-menu-item:hover{ color:var(--av-gold); }
+body #av-nav nav.hfe-dropdown .menu-item:first-child a.hfe-menu-item{ color:#FFFFFF; background:var(--av-ink); }
+body #av-nav nav.hfe-dropdown .menu-item.current-menu-item a.hfe-menu-item,
+body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-gold); background:var(--av-panel); }
+
+/* design hover / focus states */
+.av-co-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-co-x1:hover{background: rgba(254, 195, 6, 0.07) !important;}
+.av-co-x2:hover{padding-left: 16px !important; padding-right: 16px !important; background: rgb(255, 255, 255) !important;}
+.av-co-x3:hover{transform: translateY(-6px) !important; border-color: rgb(254, 195, 6) !important; background: linear-gradient(160deg, rgba(254, 195, 6, 0.16), rgba(255, 255, 255, 0.02)) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-sv-x1:hover{background: rgba(254, 195, 6, 0.12) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x2:hover{background: rgb(254, 195, 6) !important; color: rgb(30, 38, 34) !important; border-color: rgb(254, 195, 6) !important;}
+.av-sv-x3:hover{background: rgb(255, 255, 255) !important; border-color: rgb(255, 255, 255) !important;}
+.av-sv-x4:hover{transform: translateY(-8px) !important;}
+.av-sv-x5:hover{transform: translateY(-6px) !important; box-shadow: rgba(20, 26, 23, 0.28) 0px 28px 56px !important;}
+.av-sv-x6:hover{transform: translateY(-4px) !important; border-color: rgb(254, 195, 6) !important;}
+.av-sv-x7:hover{padding-left: 14px !important; background: rgb(255, 255, 255) !important;}
+.av-sv-x8:hover{background: rgb(43, 92, 4) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x9:hover{color: rgb(255, 255, 255) !important;}
+.av-sv-xa:hover{padding-left: 14px !important; padding-right: 14px !important; background: rgba(254, 195, 6, 0.08) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-xb:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-pb-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-pb-x1:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-pb-x2:hover{transform: translateY(-6px) !important;}
+.av-pb-x3:hover{border-color: rgb(43, 92, 4) !important;}
+.av-pb-x4:hover{background: rgb(255, 255, 255) !important; padding-left: 16px !important; padding-right: 16px !important;}
+.av-ct-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-ct-x1:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-ct-x2:hover{border-color: rgb(254, 195, 6) !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x3:hover{transform: translateY(-6px) !important; box-shadow: rgba(20, 26, 23, 0.26) 0px 30px 60px !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x4:focus{border-color: rgb(43, 92, 4) !important; background: rgb(255, 255, 255) !important;}
+.av-ct-x5:hover{background: rgb(30, 38, 34) !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x6:hover{background: rgb(244, 245, 242) !important; padding-left: 24px !important; color: rgb(30, 38, 34) !important;}
+
+/* ---- Inner pages: phone fixes (was ausvac-zzzzzzzzzzzzzzzzzzzzzzzz-pages-fix.css) ---- */
+/* --------------------------------------------------------------------------
+   Inner pages: phone-width fixes found in the post-launch audit.
+   (Hooks are data-av attributes in the page markup.)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+  /* Company timeline: "2002 – Today" ran into the timeline dot */
+  .av-page [data-av="tl-year"] strong{ font-size: 15px !important; }
+  .av-page [data-av="tl-year"] span{ letter-spacing: .12em !important; }
+
+  /* Publications: filter buttons start on the left instead of a ragged right edge */
+  .av-page [data-av="chips"]{ justify-content: flex-start !important; }
+}
+
+@media (max-width: 480px){
+  /* Publications hero: the three stats stay on one row */
+  .av-page [data-av="pbstats"]{ display: grid !important; grid-template-columns: auto auto auto; justify-self: stretch !important; }
+  .av-page [data-av="pbstats"] > div{ padding: 12px 14px !important; }
+  .av-page [data-av="pbstats"] strong{ font-size: 22px !important; white-space: nowrap; }
+}
+
+/* ---- Company timeline (phones) (was ausvac-zzzzzzzzzzzzzzzzzzzzzzzzz-timeline.css) ---- */
+/* Company timeline on phones: keep the year labels clear of the timeline dot
+   (follows ...-pages-fix.css; that file's span rule also hit the year text). */
+@media (max-width: 767px){
+  .av-page [data-av="tl-year"]{ padding-right: 18px; }
+  .av-page [data-av="tl-year"] strong span{ letter-spacing: normal !important; }
+}
+
+/* ---- Company timeline column (phones) (was ausvac-zzzzzzzzzzzzzzzzzzzzzzzzzz-timeline2.css) ---- */
+/* Company timeline on phones: the design's 70px year column is too narrow for
+   "2002 – Today" and "INTERNATIONAL". Widen it to 96px with a 28px gap and move
+   the line (column + gap/2) and the dots (-gap/2) to match.
+   Supersedes the padding in ...-timeline.css. */
+@media (max-width: 767px){
+  .av-page div:has(> [data-av="tl-year"]){ grid-template-columns: 96px minmax(0, 1fr) !important; gap: 28px !important; }
+  .av-page div:has(> div > [data-av="tl-year"]) > span:first-child{ left: 110px !important; }
+  .av-page div:has(> [data-av="tl-year"]) > div:last-child > span:first-child{ left: -14px !important; }
+  .av-page [data-av="tl-year"]{ padding-right: 10px !important; }
+  .av-page [data-av="tl-year"] > span{ font-size: 9px !important; letter-spacing: .08em !important; }
+  .av-page [data-av="tl-year"] > span span{ letter-spacing: .08em !important; }
+}
