@@ -1,0 +1,55 @@
+/* --------------------------------------------------------------------------
+   Inner-page buttons use the Home page's bracket button (.av-btn): transparent,
+   2px side borders + 12px corner ticks, 11px / 600 / .2em caps.
+   Light variant on dark backgrounds, gold variant on light backgrounds.
+   The design's icon boxes and arrow circles are hidden.
+   -------------------------------------------------------------------------- */
+.av-page a.av-ct-x1, .av-page a.av-ct-x2, .av-page a.av-pb-x1,
+.av-page a.av-sv-x8, .av-page button.av-ct-x5{
+  --av-btn-c: #FFFFFF;
+  display: inline-flex !important; align-items: center; gap: 0 !important;
+  justify-self: start; width: auto;
+  padding: 14px 22px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 11px !important; font-weight: 600 !important; letter-spacing: .2em !important; line-height: 1 !important;
+  text-transform: uppercase; text-decoration: none !important; text-shadow: none;
+  color: #FFFFFF !important;
+  border: 0 !important; border-left: 2px solid var(--av-btn-c) !important; border-right: 2px solid var(--av-btn-c) !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  background-color: transparent !important;
+  background-image:
+    linear-gradient(var(--av-btn-c), var(--av-btn-c)),
+    linear-gradient(var(--av-btn-c), var(--av-btn-c)),
+    linear-gradient(var(--av-btn-c), var(--av-btn-c)),
+    linear-gradient(var(--av-btn-c), var(--av-btn-c)) !important;
+  background-size: 12px 2px !important; background-repeat: no-repeat !important;
+  background-position: left top, left bottom, right top, right bottom !important;
+  cursor: pointer; transition: color .25s ease;
+}
+.av-page a.av-ct-x1 > span, .av-page a.av-pb-x1 > span,
+.av-page a.av-sv-x8 > span, .av-page button.av-ct-x5 > span{ display: none !important; }
+
+/* light (dark backgrounds): Contact hero, Publications hero */
+.av-page a.av-ct-x1:hover, .av-page a.av-ct-x2:hover, .av-page a.av-pb-x1:hover,
+.av-page a.av-ct-x1:focus-visible, .av-page a.av-ct-x2:focus-visible, .av-page a.av-pb-x1:focus-visible{
+  color: var(--av-gold) !important; transform: none !important;
+}
+
+/* gold (light backgrounds): Services consulting, Contact form */
+.av-page a.av-sv-x8, .av-page button.av-ct-x5{ --av-btn-c: var(--av-gold); color: var(--av-green) !important; }
+.av-page a.av-sv-x8:hover, .av-page button.av-ct-x5:hover,
+.av-page a.av-sv-x8:focus-visible, .av-page button.av-ct-x5:focus-visible{ color: var(--av-ink) !important; }
+
+/* Services featured document: the DOWNLOAD label inside the card */
+.av-page span[style*="letter-spacing: 0.2em"][style*="margin-top: 6px"]{
+  --av-btn-c: #FFFFFF; gap: 0 !important; padding: 14px 22px; color: #FFFFFF !important;
+  font-size: 11px !important; font-weight: 600 !important; line-height: 1;
+  border-left: 2px solid var(--av-btn-c); border-right: 2px solid var(--av-btn-c);
+  background-image: linear-gradient(var(--av-btn-c), var(--av-btn-c)), linear-gradient(var(--av-btn-c), var(--av-btn-c)), linear-gradient(var(--av-btn-c), var(--av-btn-c)), linear-gradient(var(--av-btn-c), var(--av-btn-c));
+  background-size: 12px 2px; background-repeat: no-repeat;
+  background-position: left top, left bottom, right top, right bottom;
+  transition: color .25s ease;
+}
+.av-page span[style*="letter-spacing: 0.2em"][style*="margin-top: 6px"] > span{ display: none !important; }
+.av-page a:hover span[style*="letter-spacing: 0.2em"][style*="margin-top: 6px"]{ color: var(--av-gold) !important; }
