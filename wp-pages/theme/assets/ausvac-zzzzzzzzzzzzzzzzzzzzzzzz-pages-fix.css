@@ -1,0 +1,19 @@
+/* --------------------------------------------------------------------------
+   Inner pages: phone-width fixes found in the post-launch audit.
+   (Hooks are data-av attributes in the page markup.)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+  /* Company timeline: "2002 – Today" ran into the timeline dot */
+  .av-page [data-av="tl-year"] strong{ font-size: 15px !important; }
+  .av-page [data-av="tl-year"] span{ letter-spacing: .12em !important; }
+
+  /* Publications: filter buttons start on the left instead of a ragged right edge */
+  .av-page [data-av="chips"]{ justify-content: flex-start !important; }
+}
+
+@media (max-width: 480px){
+  /* Publications hero: the three stats stay on one row */
+  .av-page [data-av="pbstats"]{ display: grid !important; grid-template-columns: auto auto auto; justify-self: stretch !important; }
+  .av-page [data-av="pbstats"] > div{ padding: 12px 14px !important; }
+  .av-page [data-av="pbstats"] strong{ font-size: 22px !important; white-space: nowrap; }
+}

@@ -1,0 +1,6 @@
+/* Company timeline on phones: keep the year labels clear of the timeline dot
+   (follows ...-pages-fix.css; that file's span rule also hit the year text). */
+@media (max-width: 767px){
+  .av-page [data-av="tl-year"]{ padding-right: 18px; }
+  .av-page [data-av="tl-year"] strong span{ letter-spacing: normal !important; }
+}
