@@ -1,0 +1,66 @@
+/* --------------------------------------------------------------------------
+   Inner pages (Company, Services, Publications, Contact) built from the
+   design package. Markup lives in Elementor HTML widgets inside
+   .av-page; most styling is inline in that markup, as in the design.
+   This file: Elementor/theme resets, the overlay-header offset, the hover
+   and focus states the design generated at runtime, and the active menu item.
+   -------------------------------------------------------------------------- */
+
+/* Elementor wrapper: no padding, gaps or widget spacing around the sections */
+.av-page.e-con,
+.av-page .e-con{ --padding-top:0; --padding-right:0; --padding-bottom:0; --padding-left:0; --gap:0; --row-gap:0; --column-gap:0; --widgets-spacing:0; padding:0; gap:0; }
+.av-page .elementor-widget{ margin:0 !important; width:100%; }
+.av-page .elementor-widget-html > .elementor-widget-container{ padding:0; margin:0; }
+
+/* theme (Hello Elementor) defaults that would leak into the design markup */
+.av-page button{ padding:0; border-radius:0; line-height:normal; text-transform:none; white-space:normal; }
+.av-page input, .av-page textarea{ border-radius:0; }
+.av-page input:focus, .av-page textarea:focus{ outline:none; }
+.av-page img{ height:auto; }
+.av-page img[style*="height: 100%"]{ height:100%; }
+.av-page h1, .av-page h2, .av-page h3, .av-page h4, .av-page p{ font-family:'Poppins', sans-serif; }
+.av-page :focus-visible{ outline:2px solid #FEC306; outline-offset:2px; }
+
+/* hero: the site header overlays it, so the copy starts below the header */
+.av-page [data-av="heroinner"]{ padding-top:clamp(120px, 11vw, 150px) !important; }
+@media (max-width: 767px){
+  .av-page [data-av="heroinner"]{ padding-top:118px !important; }
+}
+
+/* active menu item (the theme hard-coded the first item, HOME, as gold) */
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item:first-child a.hfe-menu-item{ color:#FFFFFF; }
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item.current-menu-item a.hfe-menu-item{ color:var(--av-gold); }
+#av-nav .hfe-nav-menu__layout-horizontal .menu-item a.hfe-menu-item:hover{ color:var(--av-gold); }
+body #av-nav nav.hfe-dropdown .menu-item:first-child a.hfe-menu-item{ color:#FFFFFF; background:var(--av-ink); }
+body #av-nav nav.hfe-dropdown .menu-item.current-menu-item a.hfe-menu-item,
+body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-gold); background:var(--av-panel); }
+
+/* design hover / focus states */
+.av-co-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-co-x1:hover{background: rgba(254, 195, 6, 0.07) !important;}
+.av-co-x2:hover{padding-left: 16px !important; padding-right: 16px !important; background: rgb(255, 255, 255) !important;}
+.av-co-x3:hover{transform: translateY(-6px) !important; border-color: rgb(254, 195, 6) !important; background: linear-gradient(160deg, rgba(254, 195, 6, 0.16), rgba(255, 255, 255, 0.02)) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-sv-x1:hover{background: rgba(254, 195, 6, 0.12) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x2:hover{background: rgb(254, 195, 6) !important; color: rgb(30, 38, 34) !important; border-color: rgb(254, 195, 6) !important;}
+.av-sv-x3:hover{background: rgb(255, 255, 255) !important; border-color: rgb(255, 255, 255) !important;}
+.av-sv-x4:hover{transform: translateY(-8px) !important;}
+.av-sv-x5:hover{transform: translateY(-6px) !important; box-shadow: rgba(20, 26, 23, 0.28) 0px 28px 56px !important;}
+.av-sv-x6:hover{transform: translateY(-4px) !important; border-color: rgb(254, 195, 6) !important;}
+.av-sv-x7:hover{padding-left: 14px !important; background: rgb(255, 255, 255) !important;}
+.av-sv-x8:hover{background: rgb(43, 92, 4) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-x9:hover{color: rgb(255, 255, 255) !important;}
+.av-sv-xa:hover{padding-left: 14px !important; padding-right: 14px !important; background: rgba(254, 195, 6, 0.08) !important; color: rgb(255, 255, 255) !important;}
+.av-sv-xb:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-pb-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-pb-x1:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-pb-x2:hover{transform: translateY(-6px) !important;}
+.av-pb-x3:hover{border-color: rgb(43, 92, 4) !important;}
+.av-pb-x4:hover{background: rgb(255, 255, 255) !important; padding-left: 16px !important; padding-right: 16px !important;}
+.av-ct-x0:hover{color: rgb(254, 195, 6) !important;}
+.av-ct-x1:hover{background: rgb(255, 255, 255) !important; color: rgb(30, 38, 34) !important;}
+.av-ct-x2:hover{border-color: rgb(254, 195, 6) !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x3:hover{transform: translateY(-6px) !important; box-shadow: rgba(20, 26, 23, 0.26) 0px 30px 60px !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x4:focus{border-color: rgb(43, 92, 4) !important; background: rgb(255, 255, 255) !important;}
+.av-ct-x5:hover{background: rgb(30, 38, 34) !important; color: rgb(255, 255, 255) !important;}
+.av-ct-x6:hover{background: rgb(244, 245, 242) !important; padding-left: 24px !important; color: rgb(30, 38, 34) !important;}
