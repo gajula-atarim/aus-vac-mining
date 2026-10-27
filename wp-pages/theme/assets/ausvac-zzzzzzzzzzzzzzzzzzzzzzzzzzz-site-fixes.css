@@ -591,3 +591,47 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   html body .av-page section[data-screen-label$="Hero"] > div[style*="width: 1px"]{ display: none !important; }
   html body .av-page [data-av="heroinner"]{ padding-left: 20px !important; }
 }
+
+/* ---- Document popups (Services documents, Company CVs) ---- */
+/* --------------------------------------------------------------------------
+   Opened by ausvac-pages.js from <template data-av-doc> blocks; the box,
+   close button, eyebrow and title reuse the "Read the full story" styles.
+   -------------------------------------------------------------------------- */
+template[data-av-doc]{ display: none !important; }
+.av-doc-modal .av-story-modal__box{ width: min(760px, calc(100% - 32px)); }
+.av-doc h3{
+  margin: 22px 0 8px; font: 600 12px/1.4 'Poppins', sans-serif;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--av-green);
+}
+.av-doc p, .av-doc li{ font-size: 15px; line-height: 1.75; color: var(--av-body); }
+.av-doc p + p{ margin-top: 12px; }
+.av-doc ul{ margin: 0; padding: 0 0 0 18px; }
+.av-doc li{ margin: 0 0 6px; }
+.av-doc li::marker{ color: var(--av-gold); }
+.av-doc ul.av-doc-timeline{ list-style: none; padding: 0; border-left: 2px solid var(--av-gold); }
+.av-doc-timeline li{ padding: 0 0 8px 16px; }
+.av-doc-timeline b{ display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--av-ink); }
+.av-doc-note{
+  margin: 22px 0 0 !important; padding: 12px 16px;
+  background: var(--av-light); border-left: 3px solid var(--av-gold);
+  font-size: 13px !important; line-height: 1.6 !important;
+}
+.av-doc-actions{ display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0 4px; }
+.av-doc-btn{
+  display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px;
+  background: var(--av-gold); color: var(--av-ink) !important; text-decoration: none !important;
+  font: 600 12px/1 'Poppins', sans-serif; letter-spacing: .18em; text-transform: uppercase;
+  transition: background-color .2s, color .2s;
+}
+.av-doc-btn:hover, .av-doc-btn:focus-visible{ background: var(--av-ink); color: #FFFFFF !important; outline: none; }
+.av-doc-btn--ghost{ background: transparent; box-shadow: inset 0 0 0 1.5px var(--av-ink); }
+.av-doc-quotes{ display: grid; gap: 16px; }
+.av-doc-quote{ margin: 0; padding: 20px 22px; background: var(--av-light); border-left: 3px solid var(--av-gold); }
+.av-doc-quote blockquote{ margin: 0 0 12px; padding: 0; border: 0; font-size: 15px; line-height: 1.75; font-style: normal; color: var(--av-ink); }
+.av-doc-quote figcaption{ display: grid; gap: 2px; font-size: 13px; line-height: 1.5; color: var(--av-body); }
+.av-doc-quote figcaption strong{ font-weight: 600; color: var(--av-ink); }
+@media (max-width: 767px){
+  .av-doc-modal .av-story-modal__box{ width: calc(100% - 24px); }
+  .av-doc p, .av-doc li, .av-doc-quote blockquote{ font-size: 14px; }
+  .av-doc-btn{ flex: 1 1 100%; }
+}

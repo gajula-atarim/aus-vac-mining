@@ -194,3 +194,61 @@
   function init() { reveal(); parallax(); projects(); rail(); filter(); form(); }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
+
+/* Document popups: a link with data-av-doc-open="KEY" opens the matching
+   <template data-av-doc="KEY"> from the page in a dialog (styled by the
+   .av-story-modal rules). Used for documents that have no file yet; swap the
+   link's href and drop the attribute once the client's PDF is uploaded. */
+(function () {
+  'use strict';
+  var links = document.querySelectorAll('[data-av-doc-open]');
+  if (!links.length) { return; }
+  var dlg, box, last;
+
+  function close() {
+    if (!dlg) { return; }
+    if (dlg.close) { dlg.close(); } else { dlg.removeAttribute('open'); onClosed(); }
+  }
+  function onClosed() {
+    document.documentElement.classList.remove('av-modal-open');
+    if (last && last.focus) { last.focus(); }
+  }
+  function build() {
+    dlg = document.createElement('dialog');
+    dlg.className = 'av-story-modal av-doc-modal';
+    dlg.setAttribute('aria-modal', 'true');
+    box = document.createElement('div');
+    box.className = 'av-story-modal__box';
+    dlg.appendChild(box);
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) { close(); } });
+    dlg.addEventListener('close', onClosed);
+    dlg.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.close) { close(); } });
+    document.body.appendChild(dlg);
+  }
+  function open(key) {
+    var tpl = document.querySelector('template[data-av-doc="' + key + '"]');
+    if (!tpl) { return false; }
+    if (!dlg) { build(); }
+    box.innerHTML = '';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'av-story-modal__close';
+    btn.setAttribute('aria-label', 'Close');
+    btn.innerHTML = '&times;';
+    btn.addEventListener('click', close);
+    box.appendChild(btn);
+    box.appendChild(tpl.content.cloneNode(true));
+    var title = box.querySelector('.av-story-modal__title');
+    if (title) { title.id = 'av-doc-title'; dlg.setAttribute('aria-labelledby', 'av-doc-title'); }
+    document.documentElement.classList.add('av-modal-open');
+    if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+    btn.focus();
+    return true;
+  }
+  [].forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      last = a;
+      if (open(a.getAttribute('data-av-doc-open'))) { e.preventDefault(); }
+    });
+  });
+})();
