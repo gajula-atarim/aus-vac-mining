@@ -635,3 +635,14 @@ template[data-av-doc]{ display: none !important; }
   .av-doc p, .av-doc li, .av-doc-quote blockquote{ font-size: 14px; }
   .av-doc-btn{ flex: 1 1 100%; }
 }
+
+/* ---- Tablet: three-card rows instead of 2 + an orphan ---- */
+/* Services "Value for companies" and the Company CV downloads. */
+@media (min-width: 768px) and (max-width: 1024px){
+  .av-page div:has(> .av-sv-x5){ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .av-page .av-sv-x5 strong{ font-size: 17px !important; }
+  .av-page div:has(> a.av-co-x3){ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; }
+  .av-page a.av-co-x3{ padding: 20px !important; min-height: 200px !important; }
+  .av-page a.av-co-x3 > span:first-child{ font-size: 84px !important; }
+  .av-page a.av-co-x3 strong{ font-size: 16px !important; }
+}
