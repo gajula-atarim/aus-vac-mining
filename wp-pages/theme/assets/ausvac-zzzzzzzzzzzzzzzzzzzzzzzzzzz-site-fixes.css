@@ -582,3 +582,12 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
     padding-right: max(40px, calc((100% - 1180px) / 2 + 40px)) !important;
   }
 }
+
+/* ---- Phones: logo and hero text share the 20px content edge ---- */
+/* The logo sat at 16px and Company's hero copy at 60px (clearing its thin
+   decorative guide lines, which are hidden here instead). */
+@media (max-width: 767px){
+  html body #av-header > .e-con-inner{ padding-left: 20px !important; }
+  html body .av-page section[data-screen-label$="Hero"] > div[style*="width: 1px"]{ display: none !important; }
+  html body .av-page [data-av="heroinner"]{ padding-left: 20px !important; }
+}
