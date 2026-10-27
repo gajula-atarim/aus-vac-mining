@@ -533,3 +533,17 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   html body #av-services{ padding-top: 0; }
   html body #av-services > .e-con-inner{ padding-top: 72px; }
 }
+
+/* ---- Mobile: section top spacing on all pages ---- */
+/* --------------------------------------------------------------------------
+   The inner-page sections (HTML widgets) set 96-120px of inline top padding,
+   which left a tall blank band above each heading on phones. Plain sections
+   get 60px; sections with a torn top edge get 84px (about 50px under the
+   wave). Matching "padding: clamp(" skips wrappers that have no top padding.
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+  html body section[data-screen-label]:not([data-screen-label$="Hero"]) > div[style*="max-width"][style*="padding: clamp("]{ padding-top: 60px !important; }
+  html body section[data-screen-label]:not([data-screen-label$="Hero"]):has(> svg[style*="top: -1px"]) > div[style*="max-width"][style*="padding: clamp("]{ padding-top: 84px !important; }
+  html body #av-apps{ padding-top: 0; }
+  html body #av-apps > .e-con-inner{ padding-top: 80px; }
+}
