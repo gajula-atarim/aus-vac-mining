@@ -547,3 +547,13 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   html body #av-apps{ padding-top: 0; }
   html body #av-apps > .e-con-inner{ padding-top: 80px; }
 }
+
+/* ---- Tablet: hero text lines up with the header logo ---- */
+/* --------------------------------------------------------------------------
+   The logo sat at 6vw (46-60px) while inner-page hero copy used 4vw and the
+   Home hero copy 60px. Both now start at 60px, clear of the Home social rail.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px){
+  html body #av-header > .e-con-inner{ padding-left: 60px; }
+  html body .av-page [data-av="heroinner"]{ padding-left: 60px !important; }
+}
