@@ -646,3 +646,9 @@ template[data-av-doc]{ display: none !important; }
   .av-page a.av-co-x3 > span:first-child{ font-size: 84px !important; }
   .av-page a.av-co-x3 strong{ font-size: 16px !important; }
 }
+
+/* ---- Projects map section (Services and Home): stat tiles 2 x 2 on tablet ---- */
+/* auto-fit gave 3 + 1, with an empty grey cell beside the last tile. */
+@media (min-width: 600px) and (max-width: 1023px){
+  #projects div[style*="minmax(min(100%, 220px), 1fr)"]{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
