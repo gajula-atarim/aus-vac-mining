@@ -42,6 +42,11 @@ add_action( 'wp_enqueue_scripts', function () {
 	if ( file_exists( $dir . '/assets/ausvac-pages.js' ) ) {
 		wp_enqueue_script( 'ausvac-pages', $uri . '/assets/ausvac-pages.js', array(), filemtime( $dir . '/assets/ausvac-pages.js' ), true );
 	}
+
+	// Contact Form 7: "Thank you" box after a successful send.
+	if ( defined( 'WPCF7_VERSION' ) && file_exists( $dir . '/assets/ausvac-cf7.js' ) ) {
+		wp_enqueue_script( 'ausvac-cf7', $uri . '/assets/ausvac-cf7.js', array(), filemtime( $dir . '/assets/ausvac-cf7.js' ), true );
+	}
 }, 20 );
 
 add_action( 'wp_body_open', function () {
@@ -49,41 +54,14 @@ add_action( 'wp_body_open', function () {
 } );
 
 /**
- * Contact page form (assets/ausvac-pages.js posts here).
- * Mails the site admin address; honeypot + minimum fill time against bots.
+ * Contact Form 7: keep the form markup exactly as written (no auto <p>/<br>),
+ * and run its shortcode inside Elementor HTML widgets (the Contact page form).
  */
-function ausvac_contact_submit() {
-	$field = function ( $key ) {
-		return isset( $_POST[ $key ] ) ? trim( wp_unslash( $_POST[ $key ] ) ) : '';
-	};
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
-	if ( '' !== $field( 'website' ) || (int) $field( 'elapsed' ) < 3000 ) {
-		wp_send_json_error( 'Your message could not be sent. Please call or email us instead.', 400 );
+add_filter( 'elementor/widget/render_content', function ( $content, $widget ) {
+	if ( 'html' === $widget->get_name() && false !== strpos( $content, '[contact-form-7' ) ) {
+		return do_shortcode( $content );
 	}
-
-	$name    = sanitize_text_field( $field( 'name' ) );
-	$email   = sanitize_email( $field( 'email' ) );
-	$subject = sanitize_text_field( $field( 'subject' ) );
-	$message = sanitize_textarea_field( $field( 'message' ) );
-	$updates = '' !== $field( 'updates' ) ? 'Yes' : 'No';
-
-	if ( '' === $name || '' === $subject || '' === $message || ! is_email( $email ) ) {
-		wp_send_json_error( 'Please fill in all required fields with a valid email address.', 400 );
-	}
-
-	$to   = apply_filters( 'ausvac_contact_recipient', get_option( 'admin_email' ) );
-	$body = "Name: {$name}\nEmail: {$email}\nEmail updates: {$updates}\n\n{$message}\n";
-	$sent = wp_mail(
-		$to,
-		'[Website enquiry] ' . $subject,
-		$body,
-		array( 'Reply-To: ' . $name . ' <' . $email . '>' )
-	);
-
-	if ( ! $sent ) {
-		wp_send_json_error( 'Your message could not be sent right now. Please call or email us instead.', 500 );
-	}
-	wp_send_json_success();
-}
-add_action( 'wp_ajax_ausvac_contact', 'ausvac_contact_submit' );
-add_action( 'wp_ajax_nopriv_ausvac_contact', 'ausvac_contact_submit' );
+	return $content;
+}, 10, 2 );

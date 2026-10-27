@@ -1,0 +1,10 @@
+Name: [your-name]
+Email: [your-email]
+Email updates: [updates]
+
+Subject: [your-subject]
+
+[your-message]
+
+--
+Sent from the contact form at [_site_url]

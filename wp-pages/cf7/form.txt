@@ -1,0 +1,6 @@
+<label style="display:grid;gap:8px;"><span style="font-size:11px;font-weight:700;letter-spacing:0.16em;">NAME: <span style="color:#2B5C04;">*</span></span>[text* your-name class:av-cf7-input autocomplete:name]</label>
+<label style="display:grid;gap:8px;"><span style="font-size:11px;font-weight:700;letter-spacing:0.16em;">EMAIL: <span style="color:#2B5C04;">*</span></span>[email* your-email class:av-cf7-input autocomplete:email placeholder "Enter email address"]</label>
+[checkbox updates class:av-cf7-check use_label_element "Check here to receive email updates"]
+<label style="display:grid;gap:8px;"><span style="font-size:11px;font-weight:700;letter-spacing:0.16em;">SUBJECT: <span style="color:#2B5C04;">*</span></span>[text* your-subject class:av-cf7-input]</label>
+<label style="display:grid;gap:8px;"><span style="font-size:11px;font-weight:700;letter-spacing:0.16em;">MESSAGE: <span style="color:#2B5C04;">*</span></span>[textarea* your-message 40x5 class:av-cf7-input]</label>
+<button type="submit" class="av-ct-x5 av-cf7-submit">SUBMIT <span>→</span></button>

@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------------
+   Contact page form (Contact Form 7), styled to the design's form:
+   grid with 16px gaps, 1.5px light-grey fields, green focus, green checkbox,
+   bracket SUBMIT button (button.av-ct-x5, see ...-buttons.css).
+   -------------------------------------------------------------------------- */
+.av-cf7 .wpcf7{ margin: 0; }
+.av-cf7 .wpcf7-form{ position: relative; display: grid; gap: 16px; margin: 0; }
+.av-cf7 .wpcf7-form > p{ margin: 0; }
+.av-cf7 .wpcf7-form-control-wrap{ display: block; }
+
+.av-cf7 .av-cf7-input{
+  width: 100%; box-sizing: border-box; margin: 0;
+  border: 1.5px solid #E3E6DF; border-radius: 0; box-shadow: none;
+  background: #F7F8F5; padding: 14px 16px;
+  font-size: 15px; font-family: inherit; line-height: 1.5; color: #1E2622;
+  outline: none; transition: border-color .2s, background-color .2s;
+}
+.av-cf7 textarea.av-cf7-input{ resize: vertical; min-height: 0; }
+.av-cf7 .av-cf7-input::placeholder{ color: #8A918C; opacity: 1; }
+.av-cf7 .av-cf7-input:focus{ border-color: #2B5C04; background: #FFFFFF; }
+
+/* "Check here to receive email updates" */
+.av-cf7 .av-cf7-check .wpcf7-list-item{ display: block; margin: 0; }
+.av-cf7 .av-cf7-check label{
+  display: flex; align-items: center; gap: 12px; cursor: pointer;
+  font-size: 13px; color: #4A524D;
+}
+.av-cf7 .av-cf7-check input[type="checkbox"]{
+  width: 20px; height: 20px; margin: 0; flex-shrink: 0; accent-color: #2B5C04;
+}
+
+/* validation */
+.av-cf7 .av-cf7-input.wpcf7-not-valid{ border-color: #9A2B1F; }
+.av-cf7 .wpcf7-not-valid-tip{ display: block; margin-top: 6px; font-size: 12px; color: #9A2B1F; }
+.av-cf7 .wpcf7-spinner{ display: none; }
+.av-cf7 .wpcf7 form:not(.init) .wpcf7-response-output{
+  margin: 0; padding: 12px 14px; border: 1.5px solid #FEC306;
+  font-size: 13px; line-height: 1.6; color: #4A524D;
+}
+.av-cf7 .wpcf7 form.invalid .wpcf7-response-output,
+.av-cf7 .wpcf7 form.unaccepted .wpcf7-response-output,
+.av-cf7 .wpcf7 form.failed .wpcf7-response-output,
+.av-cf7 .wpcf7 form.aborted .wpcf7-response-output,
+.av-cf7 .wpcf7 form.spam .wpcf7-response-output{ border-color: #9A2B1F; color: #9A2B1F; }
+.av-cf7 .wpcf7 form.submitting .av-cf7-submit{ opacity: .6; pointer-events: none; }
