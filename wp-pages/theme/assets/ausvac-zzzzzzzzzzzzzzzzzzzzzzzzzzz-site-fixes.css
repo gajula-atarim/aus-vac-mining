@@ -557,3 +557,11 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   html body #av-header > .e-con-inner{ padding-left: 60px; }
   html body .av-page [data-av="heroinner"]{ padding-left: 60px !important; }
 }
+
+/* ---- Services hero: the two service links side by side ---- */
+/* Client request. Tablet and up only; phones keep them stacked. */
+@media (min-width: 768px){
+  .av-page div:has(> a.av-sv-x1){ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; width: min(760px, 100%) !important; }
+  .av-page div:has(> a.av-sv-x1) > a.av-sv-x1:first-child{ border-bottom: 0 !important; border-right: 1px solid rgba(255, 255, 255, .14); }
+  .av-page a.av-sv-x1{ align-items: start !important; }
+}
