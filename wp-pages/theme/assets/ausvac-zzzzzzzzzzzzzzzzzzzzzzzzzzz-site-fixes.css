@@ -565,3 +565,20 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   .av-page div:has(> a.av-sv-x1) > a.av-sv-x1:first-child{ border-bottom: 0 !important; border-right: 1px solid rgba(255, 255, 255, .14); }
   .av-page a.av-sv-x1{ align-items: start !important; }
 }
+
+/* ---- Desktop: inner-page hero text lines up with the header logo ---- */
+/* --------------------------------------------------------------------------
+   The header logo sits at 6vw up to 1139px, then at the left edge of a
+   centred 956px column. The hero wrappers were centred at 1100/1180px with
+   40px padding, so the copy started 40-72px left of the logo.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1139px){
+  html body .av-page [data-av="heroinner"]{ padding-left: 6vw !important; }
+}
+@media (min-width: 1140px){
+  html body .av-page [data-av="heroinner"]{
+    max-width: none !important;
+    padding-left: calc((100% - 956px) / 2) !important;
+    padding-right: max(40px, calc((100% - 1180px) / 2 + 40px)) !important;
+  }
+}
