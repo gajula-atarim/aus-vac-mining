@@ -522,3 +522,14 @@ body #av-nav nav.hfe-dropdown .menu-item a.hfe-menu-item:hover{ color:var(--av-g
   .av-page [data-av="tl-year"] > span{ font-size: 9px !important; letter-spacing: .08em !important; }
   .av-page [data-av="tl-year"] > span span{ letter-spacing: .08em !important; }
 }
+
+/* ---- Mobile: Home services top gap ---- */
+/* --------------------------------------------------------------------------
+   The services section's tall top padding makes room for the About mosaic
+   that overlaps it on desktop. On mobile the mosaic stacks inside About, so
+   the padding left a blank band above "Our Services".
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px){
+  html body #av-services{ padding-top: 0; }
+  html body #av-services > .e-con-inner{ padding-top: 72px; }
+}
