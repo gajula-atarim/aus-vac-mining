@@ -44,14 +44,22 @@ if ( 3 !== count( $done ) ) {
 	echo "ABORT: not every widget was found\n";
 	return;
 }
-// Proof: undo the replacements on the new data and it must equal the old data exactly.
-$back = wp_json_encode( $new );
-foreach ( $plan as $ps ) {
-	foreach ( $ps as $p ) {
-		$back = str_replace( wp_json_encode( $p[1] ) === false ? $p[1] : trim( wp_json_encode( $p[1] ), '"' ), trim( wp_json_encode( $p[0] ), '"' ), $back );
+// Proof: undo the replacements on the new data; it must equal the old data exactly.
+$rev  = $new;
+$undo = function ( &$els ) use ( &$undo, $plan ) {
+	foreach ( $els as &$el ) {
+		if ( isset( $plan[ $el['id'] ] ) ) {
+			foreach ( $plan[ $el['id'] ] as $p ) {
+				$el['settings']['html'] = str_replace( $p[1], $p[0], $el['settings']['html'] );
+			}
+		}
+		if ( ! empty( $el['elements'] ) ) {
+			$undo( $el['elements'] );
+		}
 	}
-}
-if ( $back !== wp_json_encode( $old ) ) {
+};
+$undo( $rev );
+if ( $rev !== $old ) {
 	echo "ABORT: data differs beyond the planned phrases\n";
 	return;
 }
