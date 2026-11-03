@@ -60,7 +60,7 @@ testi = ('<!-- PLACEHOLDER testimonials: replace with client-approved quotes bef
   [('Request references', '/contact/', '')]))
 
 cv_en = tpl('cv-pdf', 'CURRICULUM VITAE · ENGLISH', 'Krzysztof (Kris) Biegaj – CV summary',
-  '<p>Senior manager, business and operations consultant and business owner with 45+ years in underground and open pit mining across Australia, Russia, Kazakhstan, Ghana, Mongolia and the Philippines. Founder and Director of Ausvac Mining Pty Ltd.</p>'
+  '<p>Senior manager, business and operations consultant and business owner with 40+ years in underground and open pit mining across Australia, Russia, Kazakhstan, Ghana, Mongolia and the Philippines. Founder and Director of Ausvac Mining Pty Ltd.</p>'
   '<h3>Qualifications</h3><ul>'
   '<li>Bachelor of Engineering (Mining) Hons – Wroclaw Technical University, Poland</li>'
   '<li>First Class Mine Manager’s Certificate of Competency – WA Metalliferous</li>'
@@ -81,7 +81,7 @@ cv_en = tpl('cv-pdf', 'CURRICULUM VITAE · ENGLISH', 'Krzysztof (Kris) Biegaj �
   [('Download full CV (Word)', WORD, DL), ('Contact Kris', '/contact/', '')])
 
 cv_ru = tpl('cv-ru', 'РЕЗЮМЕ · РУССКАЯ ВЕРСИЯ', 'Кшиштоф (Крис) Бегай – краткое резюме',
-  '<p>Руководитель горного производства, консультант по повышению эффективности и владелец бизнеса. Более 45 лет опыта подземной и открытой разработки в Австралии, России, Казахстане, Гане, Монголии и на Филиппинах. Основатель и директор компании Ausvac Mining Pty Ltd.</p>'
+  '<p>Руководитель горного производства, консультант по повышению эффективности и владелец бизнеса. Более 40 лет опыта подземной и открытой разработки в Австралии, России, Казахстане, Гане, Монголии и на Филиппинах. Основатель и директор компании Ausvac Mining Pty Ltd.</p>'
   '<h3>Образование и квалификация</h3><ul>'
   '<li>Горный инженер (диплом с отличием) – Вроцлавский технический университет, Польша</li>'
   '<li>Сертификат управляющего рудником первого класса – Западная Австралия, металлические рудники</li>'
