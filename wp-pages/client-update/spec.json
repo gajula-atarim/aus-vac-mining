@@ -1,0 +1,414 @@
+{
+ "posts": {
+  "76": [
+   {
+    "el": "c32d6f6",
+    "old": "uploads/2026/10/ausvac-stock-31721779.jpeg\" alt=\"Hero: underground mine\" data-slot=\"sv-hero\"",
+    "new": "uploads/2026/10/ausvac-stock-10016029.jpeg\" alt=\"Hero: underground mine tunnel\" data-slot=\"sv-hero\"",
+    "n": 1
+   },
+   {
+    "el": "1faed24",
+    "old": "uploads/2026/10/ausvac-stock-37520757.jpeg\" alt=\"Photo: vehicle in underground tunnel\" data-slot=\"sv-kambalda\"",
+    "new": "uploads/ausvac-client/mine-floor-vacuuming-kambalda-2007.jpg\" alt=\"Mine floor vacuuming with the 200 mm suction hose, nickel mine near Kambalda WA, 2007\" data-slot=\"sv-kambalda\"",
+    "n": 1
+   },
+   {
+    "el": "1faed24",
+    "old": "uploads/2026/10/ausvac-stock-29351659.jpeg\" alt=\"Photo: underground drive\" data-slot=\"sv-tunnel\"",
+    "new": "uploads/ausvac-client/harlequin-floor-sampling-2001.jpg\" alt=\"Floor sampling at CNGC Harlequin Gold Mine, Norseman WA, April 2001\" data-slot=\"sv-tunnel\"",
+    "n": 1
+   },
+   {
+    "el": "1faed24",
+    "old": "nickel grades, average +</span></span></div></div>",
+    "new": "nickel grades, average +</span></span></div></div><div data-reveal=\"\" style=\"background: rgb(255, 255, 255); border-left: 3px solid rgb(254, 195, 6); padding: 18px 20px; display: grid; gap: 10px; margin-top: 8px; min-width: 0px;\"><span style=\"font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: rgb(43, 92, 4);\">WHERE FLOOR MATERIAL IS LEFT BEHIND</span><ul style=\"margin: 0px; padding: 0px 0px 0px 18px; display: grid; gap: 4px; font-size: 13px; line-height: 1.6; color: rgb(74, 82, 77);\"><li>Ore drives</li><li>Open stopes (remote-controlled vacuuming)</li><li>Footwalls of low-angle dipping stopes</li><li>Top of the last lift in cut &amp; fill / under-hand cut &amp; fill</li><li>Tops of pillars left behind for geotechnical reasons</li><li>Underground sumps</li><li>Mills, sumps and machine-cleaning bays on surface</li><li>Selective mining of high-grade ore in open pits</li></ul></div>",
+    "n": 1
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-29506757.jpeg",
+    "new": "uploads/ausvac-client/surface-sump-before-cleanup-2003.jpg",
+    "n": 3
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-33774180.jpeg",
+    "new": "uploads/2026/10/ausvac-stope-clean-up.jpg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-14484399.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-32193624.jpeg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-15071425.jpeg",
+    "new": "uploads/ausvac-client/supersucker-towing-nickel-mine-2004.jpg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-27533504.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-18928150.jpeg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-14484386.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-37520757.jpeg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-2101140.jpeg",
+    "new": "uploads/ausvac-client/discharging-into-bobcat-2007.jpg",
+    "n": 2
+   },
+   {
+    "el": "86ff3cf",
+    "old": "uploads/2026/10/ausvac-stock-11347699.jpeg",
+    "new": "uploads/ausvac-client/harlequin-channel-sample-record-2001.jpg",
+    "n": 2
+   },
+   {
+    "el": "e62812f",
+    "old": "uploads/2026/10/ausvac-stock-28442180.jpeg\" alt=\"MINING COMPANIES\" data-slot=\"sv-b1\"",
+    "new": "uploads/ausvac-client/surface-sump-after-cleanup-2003.jpg\" alt=\"MINING COMPANIES\" data-slot=\"sv-b1\"",
+    "n": 1
+   },
+   {
+    "el": "e62812f",
+    "old": "uploads/2026/10/ausvac-stock-34150292.jpeg\" alt=\"GOVERNMENTS\" data-slot=\"sv-b2\"",
+    "new": "uploads/2026/10/ausvac-broken-ore-recovery.jpg\" alt=\"GOVERNMENTS\" data-slot=\"sv-b2\"",
+    "n": 1
+   },
+   {
+    "el": "cdae0f4",
+    "old": "uploads/2026/10/ausvac-stock-34150285.jpeg\" alt=\"Background: heavy mining equipment\" data-slot=\"sv-mach-bg\"",
+    "new": "uploads/ausvac-client/kris-biegaj-kalgoorlie-expo-2003-large.jpg\" alt=\"Background: the Ausvac Mobile Supersucker\" data-slot=\"sv-mach-bg\"",
+    "n": 1
+   },
+   {
+    "el": "cdae0f4",
+    "old": "<span>Truly mobile, available since 2003+</span>",
+    "new": "<span>Truly mobile – track-mounted, 8.3 t, 2.2 m W × 2.95 m H × 5.3 m L</span>",
+    "n": 1
+   },
+   {
+    "el": "cdae0f4",
+    "old": "<span>Diesel, easy to convert to electric</span>",
+    "new": "<span>Diesel, easy to convert to electric; dust control &amp; ROPS/FOPS</span>",
+    "n": 1
+   },
+   {
+    "el": "cdae0f4",
+    "old": "to address the challenge of potential revenue loss.</p>",
+    "new": "to address the challenge of potential revenue loss. Mine floor material recovery should be included in Pre-feasibility/Feasibility Studies, Ore Reserves estimation and Life of Mine Plans – and carried out while ventilation, compressed air, dewatering and all infrastructure are fully operational, not after the mine is flooded or put on care and maintenance.</p>",
+    "n": 1
+   },
+   {
+    "el": "33621ec",
+    "old": "https://ausvac-mining.wsdfy.com/wp-content/uploads/ausvac-docs/ausvac-mine-floor-material-recovery-presentation.pdf",
+    "new": "https://ausvac-mining.wsdfy.com/wp-content/uploads/ausvac-docs/ausvac-mine-floor-material-recovery-presentation-15-10-2026.pdf",
+    "n": 1
+   },
+   {
+    "el": "33621ec",
+    "old": "color: rgba(255, 255, 255, 0.75);\">Mine Floor Material Recovery Should Become Part of Life of Mine Plan</span>",
+    "new": "color: rgba(255, 255, 255, 0.75);\">Presentation by Kris Biegaj FAusIMM &amp; Prof. Simon C Dominy · updated 15 10 2026</span>",
+    "n": 1
+   },
+   {
+    "el": "33621ec",
+    "old": "font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; line-height: 1.12; max-width: 18ch;\">AusIMM Perth Branch Presentation 11 05 2015</strong>",
+    "new": "font-size: clamp(21px, 2.3vw, 28px); font-weight: 700; line-height: 1.15; max-width: 22ch;\">Mine Floor Material Recovery Should Become Part of Life of Mine Plan</strong>",
+    "n": 1
+   },
+   {
+    "el": "33621ec",
+    "old": "</div></div><a href=\"/contact/\" class=\"av-sv-xb\"",
+    "new": "<a href=\"https://ausvac-mining.wsdfy.com/wp-content/uploads/ausvac-docs/ausvac-jorc-code-review-update-2021.pdf\" target=\"_blank\" rel=\"noopener\" class=\"av-sv-xa\" style=\"display: grid; grid-template-columns: 60px minmax(0px, 1fr) 44px; gap: 18px; align-items: center; padding: 22px 0px; border-bottom: 1px solid rgba(255, 255, 255, 0.18); color: rgb(255, 255, 255); text-decoration: none; transition: padding 0.3s, background 0.3s;\"><span style=\"height: 60px; border: 1.5px solid rgb(201, 210, 204); color: rgb(201, 210, 204); display: grid; place-items: center; font-size: 12px; font-weight: 800; letter-spacing: 0.06em;\"><span>PDF</span></span><span style=\"display: grid; gap: 4px; min-width: 0px;\"><span style=\"font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.55);\"><span>REFERENCE</span></span><strong style=\"font-size: clamp(15px, 1.5vw, 18px); font-weight: 600; line-height: 1.35;\"><span>JORC Code Review Update – JORC, 28 June 2021</span></strong></span><span style=\"width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.3); display: grid; place-items: center; font-size: 15px;\"><span>↗</span></span></a></div></div><a href=\"/contact/\" class=\"av-sv-xb\"",
+    "n": 1
+   }
+  ],
+  "36": [
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-29506757.jpeg",
+    "new": "uploads/ausvac-client/surface-sump-before-cleanup-2003.jpg",
+    "n": 3
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-33774180.jpeg",
+    "new": "uploads/2026/10/ausvac-stope-clean-up.jpg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-14484399.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-32193624.jpeg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-15071425.jpeg",
+    "new": "uploads/ausvac-client/supersucker-towing-nickel-mine-2004.jpg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-27533504.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-18928150.jpeg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-14484386.jpeg",
+    "new": "uploads/2026/10/ausvac-stock-37520757.jpeg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-2101140.jpeg",
+    "new": "uploads/ausvac-client/discharging-into-bobcat-2007.jpg",
+    "n": 2
+   },
+   {
+    "el": "avprojmh",
+    "old": "uploads/2026/10/ausvac-stock-11347699.jpeg",
+    "new": "uploads/ausvac-client/harlequin-channel-sample-record-2001.jpg",
+    "n": 2
+   }
+  ],
+  "75": [
+   {
+    "el": "e53ed3d",
+    "old": "Member since 1992, Fellow since 2025</span>",
+    "new": "Member since 1992, Fellow since 2026</span>",
+    "n": 1
+   },
+   {
+    "el": "e883f3e",
+    "old": "Fellow since 2025</span>.</p>",
+    "new": "Fellow since 2026</span>.</p>",
+    "n": 1
+   },
+   {
+    "el": "e883f3e",
+    "old": "color: rgb(254, 195, 6);\">AUSIMM 1992</span>",
+    "new": "color: rgb(254, 195, 6);\">AUSIMM 1992 · FELLOW 2026</span>",
+    "n": 1
+   },
+   {
+    "el": "95d380d",
+    "old": "open pit gold operations at CNGC in Norseman).</span></p>",
+    "new": "open pit gold operations at CNGC in Norseman). As Mining Manager at CNGC in Norseman for five years (then part of WMC Resources), Kris ran one of the world’s first-quartile, lowest-cost gold producers – when the gold price was about twenty times lower than today.</span></p>",
+    "n": 1
+   },
+   {
+    "el": "e3418cc",
+    "old": "<li>Member of the Australasian Institute of Mining &amp; Metallurgy (AusIMM)</li>",
+    "new": "<li>Fellow of the Australasian Institute of Mining &amp; Metallurgy (FAusIMM) since 2026 – Member since 1992</li>",
+    "n": 1
+   },
+   {
+    "el": "e3418cc",
+    "old": "<li>Член Австралазийского института горного дела и металлургии (AusIMM)</li>",
+    "new": "<li>Действительный член (Fellow) Австралазийского института горного дела и металлургии (FAusIMM) с 2026 г., член с 1992 г.</li>",
+    "n": 1
+   }
+  ],
+  "77": [
+   {
+    "el": "bddfbeb",
+    "old": "7-8 October 1999, Kalgoorlie, Western Australia.</span></span>",
+    "new": "7-8 October 1999, Kalgoorlie, Western Australia.</span></span><figure style=\"margin: 6px 0px 0px; display: grid; gap: 8px; max-width: 420px; width: 100%;\"><img src=\"https://ausvac-mining.wsdfy.com/wp-content/uploads/ausvac-client/bullen-west-orebody-2001.jpg\" alt=\"Bullen West orebody variability, CNGC Norseman, 2001\" loading=\"lazy\" decoding=\"async\" style=\"display: block; width: 100%; height: auto; max-width: 100%; border: 1px solid rgb(214, 217, 210);\"><figcaption style=\"font-size: 12px; line-height: 1.5; color: rgb(107, 114, 104);\">Bullen West orebody variability – CNGC, Norseman (2001). From Kris Biegaj’s presentation.</figcaption></figure>",
+    "n": 1
+   }
+  ],
+  "78": [
+   {
+    "el": "4efa6bd",
+    "old": "uploads/2026/10/ausvac-stock-39300773-scaled.jpeg\" alt=\"Photo: mining haul truck\" data-slot=\"ct-hero\"",
+    "new": "uploads/2026/10/ausvac-stock-29351659.jpeg\" alt=\"Photo: underground drive\" data-slot=\"ct-hero\"",
+    "n": 1
+   }
+  ]
+ },
+ "settings": [
+  {
+   "post": 36,
+   "el": "avs1i",
+   "set": {
+    "image": {
+     "id": "{{A:discharging-into-bobcat-2007.jpg}}",
+     "url": "{{U:discharging-into-bobcat-2007.jpg}}"
+    },
+    "alt": "Discharging vacuum-recovered floor material into a Bobcat, nickel mine, 2007"
+   }
+  },
+  {
+   "post": 36,
+   "el": "avs2i",
+   "set": {
+    "image": {
+     "id": "{{A:mine-floor-vacuuming-kambalda-2007.jpg}}",
+     "url": "{{U:mine-floor-vacuuming-kambalda-2007.jpg}}"
+    },
+    "alt": "Mine floor vacuuming near Kambalda, Western Australia, 2007"
+   }
+  },
+  {
+   "post": 36,
+   "el": "avs2t",
+   "set": {
+    "title": "Mine Floor Vacuuming"
+   }
+  },
+  {
+   "post": 36,
+   "el": "avs4i",
+   "set": {
+    "image": {
+     "id": "{{A:kris-biegaj-kalgoorlie-expo-2003-large.jpg}}",
+     "url": "{{U:kris-biegaj-kalgoorlie-expo-2003-large.jpg}}"
+    },
+    "alt": "Kris Biegaj with the Mobile Supersucker, Kalgoorlie Mining Expo, 2003"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-service-1p",
+   "set": {
+    "image": {
+     "id": "{{A:supersucker-towing-nickel-mine-2004.jpg}}",
+     "url": "{{U:supersucker-towing-nickel-mine-2004.jpg}}"
+    },
+    "alt": "The Mobile Supersucker being towed at a high-grade nickel mine in Western Australia, 2004"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-service-2p",
+   "set": {
+    "image": {
+     "id": "{{A:surface-sump-after-cleanup-2003-b.jpg}}",
+     "url": "{{U:surface-sump-after-cleanup-2003-b.jpg}}"
+    },
+    "alt": "Surface sump on a gold mine after clean-up with the Supersucker, 2003"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-service-2d",
+   "set": {
+    "editor": "<p>Efficient clean-down of mill tanks, surface machine-cleaning bays and underground and surface sumps and ponds &ndash; normally containing a significant amount of precious metals or stones.</p>"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-app-4p",
+   "set": {
+    "image": {
+     "id": "{{A:surface-sump-before-cleanup-2003-b.jpg}}",
+     "url": "{{U:surface-sump-before-cleanup-2003-b.jpg}}"
+    },
+    "alt": "Mining equipment surface clean-up sump before clean-up, 2003"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-app-4d",
+   "set": {
+    "editor": "<p>Efficient clean-down of mill tanks, surface machine-cleaning bays and underground and surface sumps and ponds</p>"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-step-1d",
+   "set": {
+    "editor": "<p>Stationary vacuum machines used to mine opals underground at Coober Pedy, South Australia.</p>"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-step-2y",
+   "set": {
+    "title": "1999 &ndash; 2003"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-step-2t",
+   "set": {
+    "title": "NORSEMAN"
+   }
+  },
+  {
+   "post": 36,
+   "el": "av-step-2d",
+   "set": {
+    "editor": "<p>Vacuum technology used for shaft sinking by Byrnecut at CNGC Norseman (WMC); the Mobile Supersucker then designed and built in Kalgoorlie.</p>"
+   }
+  }
+ ],
+ "js": [
+  {
+   "old": "uploads/2026/10/ausvac-stock-29506757.jpeg",
+   "new": "uploads/ausvac-client/surface-sump-before-cleanup-2003.jpg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-33774180.jpeg",
+   "new": "uploads/2026/10/ausvac-stope-clean-up.jpg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-14484399.jpeg",
+   "new": "uploads/2026/10/ausvac-stock-32193624.jpeg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-15071425.jpeg",
+   "new": "uploads/ausvac-client/supersucker-towing-nickel-mine-2004.jpg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-27533504.jpeg",
+   "new": "uploads/2026/10/ausvac-stock-18928150.jpeg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-14484386.jpeg",
+   "new": "uploads/2026/10/ausvac-stock-37520757.jpeg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-2101140.jpeg",
+   "new": "uploads/ausvac-client/discharging-into-bobcat-2007.jpg",
+   "n": 1
+  },
+  {
+   "old": "uploads/2026/10/ausvac-stock-11347699.jpeg",
+   "new": "uploads/ausvac-client/harlequin-channel-sample-record-2001.jpg",
+   "n": 1
+  }
+ ],
+ "uploads": [
+  "supersucker-towing-nickel-mine-2004.jpg",
+  "kris-biegaj-kalgoorlie-expo-2003-large.jpg",
+  "mine-floor-vacuuming-kambalda-2007.jpg",
+  "discharging-into-bobcat-2007.jpg",
+  "surface-sump-before-cleanup-2003.jpg",
+  "surface-sump-after-cleanup-2003.jpg",
+  "surface-sump-before-cleanup-2003-b.jpg",
+  "surface-sump-after-cleanup-2003-b.jpg",
+  "harlequin-floor-sampling-2001.jpg",
+  "harlequin-channel-sample-record-2001.jpg",
+  "bullen-west-orebody-2001.jpg"
+ ]
+}

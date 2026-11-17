@@ -652,3 +652,9 @@ template[data-av-doc]{ display: none !important; }
 @media (min-width: 600px) and (max-width: 1023px){
   #projects div[style*="minmax(min(100%, 220px), 1fr)"]{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
+
+/* ---- Client documents shown as images: keep the whole page visible ---- */
+/* The Harlequin sampling record and floor-sampling slide are document scans;
+   cover-cropping would cut them, so they sit whole on white. */
+img[src*="harlequin-channel-sample-record"],
+img[data-slot="sv-tunnel"]{ object-fit: contain !important; background: #FFFFFF !important; }
