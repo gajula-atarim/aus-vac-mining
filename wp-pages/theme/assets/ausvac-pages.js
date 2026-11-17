@@ -57,7 +57,10 @@
     var tl = root.querySelector('[data-av="tl"]');
     var wrap = root.querySelector('[data-av="projwrap"]');
     var img = panel.querySelector('img');
-    var big = panel.children[2];
+    /* LiteSpeed lazy-load adds a <noscript> copy beside each image; skip it
+       so the positional lookups below still find the right elements. */
+    var kids = [].filter.call(panel.children, function (c) { return c.tagName !== 'NOSCRIPT'; });
+    var big = kids[2];
     var body = panel.querySelector('div');
     var tags = body.children[0].children;
     var site = body.children[1], when = body.children[2];
@@ -65,7 +68,7 @@
     var foot = body.children[4];
     var pos = foot.querySelector('span');
     var btns = foot.querySelectorAll('button');
-    var bar = panel.lastElementChild;
+    var bar = kids[kids.length - 1];
     var fill = tl.children[1];
     var nodes = tl.querySelectorAll('button');
     var cur = 0, t = 0, paused = false, last = performance.now();
