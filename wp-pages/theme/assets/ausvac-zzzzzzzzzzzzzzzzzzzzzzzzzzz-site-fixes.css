@@ -653,3 +653,25 @@ template[data-av-doc]{ display: none !important; }
   #projects div[style*="minmax(min(100%, 220px), 1fr)"]{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
 
+/* ---- Project card row (Services and Home): swipeable on phones and tablets ---- */
+/* The row only auto-slid (and not at all with Reduce Motion on), so on a phone
+   just two of the eight cards were reachable. Below 1024px it becomes a native
+   horizontal scroll with snap; the JS auto-slide runs on desktop only. The
+   second copy of the cards exists only for the desktop loop, so it is hidden. */
+@media (max-width: 1023px){
+  [data-av="rail"]{
+    overflow-x: auto !important;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: clamp(20px, 4vw, 40px);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  [data-av="rail"]::-webkit-scrollbar{ display: none; }
+  [data-av="track"]{
+    transform: none !important;
+    padding-inline: clamp(20px, 4vw, 40px);
+  }
+  [data-av="track"] > button{ scroll-snap-align: start; }
+  [data-av="track"] > button:nth-of-type(n+9){ display: none !important; }
+}

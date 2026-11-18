@@ -120,13 +120,15 @@
     var r = root.querySelector('[data-av="rail"]'), tr = root.querySelector('[data-av="track"]');
     if (!r || !tr || reduce) { return; }
     var x = 0, hold = false, last = performance.now();
+    /* Phones and tablets swipe the row natively (CSS); only desktop auto-slides. */
+    var swipe = window.matchMedia && matchMedia('(max-width: 1023px)');
     r.addEventListener('mouseenter', function () { hold = true; });
     r.addEventListener('mouseleave', function () { hold = false; });
     r.addEventListener('touchstart', function () { hold = true; }, { passive: true });
     r.addEventListener('touchend', function () { setTimeout(function () { hold = false; }, 2500); });
     (function step(now) {
       var dt = Math.min(64, now - last); last = now;
-      if (!hold && !document.hidden) {
+      if (!hold && !document.hidden && !(swipe && swipe.matches)) {
         var half = tr.scrollWidth / 2; x -= dt * 0.05; if (-x >= half) { x += half; }
         tr.style.transform = 'translateX(' + x + 'px)';
       }
